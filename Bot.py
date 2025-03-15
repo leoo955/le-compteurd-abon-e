@@ -72,23 +72,6 @@ async def follow(ctx, url_or_id: str):
 async def test(ctx):
     await ctx.send("✅ Le bot est bien en ligne et fonctionne !")
 
-
-# Commande /help pour afficher la liste des commandes
-@bot.command()
-async def help(ctx):
-    help_embed = discord.Embed(
-        title="Commandes disponibles",
-        description="Voici la liste des commandes que tu peux utiliser avec le bot :",
-        color=0x00FF00
-    )
-
-    help_embed.add_field(name="/follow <URL ou ID>", value="Permet de suivre une chaîne YouTube.", inline=False)
-    help_embed.add_field(name="/test", value="Vérifie si le bot est en ligne.", inline=False)
-    help_embed.set_footer(text="Bot créé avec ❤️ pour aider à suivre les chaînes YouTube.")
-
-    await ctx.send(embed=help_embed)
-
-
 # Event pour afficher un message quand le bot est prêt
 @bot.event
 async def on_ready():
